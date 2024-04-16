@@ -5,7 +5,7 @@ from PIL import Image
 import opening_dataset
 
 
-class NumDefinition():
+class DigDefinition():
     def __init__(self, amount_epochs=None, learning_rate=None, metric=None, sgd_sample=None):
         self.weights_input_to_2 = np.random.uniform(-0.5, 0.5, (28, 784))
         self.weights_2_to_output = np.random.uniform(-0.5, 0.5, (10, 28))
@@ -138,10 +138,10 @@ class NumDefinition():
 
 
 if __name__ == "__main__":
-    image = Image.open("numbers_images\\number_0.jpg")
+    image = Image.open("digits_images/digit_0.jpg")
 
     image_resized = image.resize((28, 28))
-    image_resized.save("numbers_images\\number_0_28.jpg")
+    image_resized.save("digits_images\\digit_0_28.jpg")
 
-    test_image = plt.imread("numbers_images\\number_0_28.jpg")
-    NumDefinition(learning_rate=lambda iter: 0.5 * (0.05 ** iter)).get_predict(test_image)
+    test_image = plt.imread("digits_images\\digit_0_28.jpg")
+    DigDefinition(learning_rate=lambda iter: 0.5 * (0.05 ** iter)).get_predict(test_image)
