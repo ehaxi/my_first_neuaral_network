@@ -1,1 +1,1 @@
-# my_first_neuaral_network
+# A neural network that determines a digit from an image
